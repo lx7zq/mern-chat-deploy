@@ -18,6 +18,8 @@ app.use(cookieParser());
 app.use(cors({
     origin: [process.env.BASE_URL, 'https://mern-chat-deploy.vercel.app'],
     credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
 app.get("/", (req, res) => {
